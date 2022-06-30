@@ -44,17 +44,18 @@ public class Tracker {
 
     public boolean replace(int id, Item idem) {
         int i = indexOf(id);
-        if (i != -1) {
+        boolean b = i != -1;
+        if (b) {
             idem.setId(id);
             items[i] = idem;
-            return true;
         }
-        return false;
+        return b;
     }
 
     public boolean delete(int id) {
         int i = indexOf(id);
-        if (i != -1) {
+        boolean b = i != -1;
+        if (b) {
             items[i] = null;
             if (i != items.length - 1) {
                 Item[] temp = Arrays.copyOf(items, items.length);
@@ -62,8 +63,7 @@ public class Tracker {
                 items[size - 1] = null;
             }
             size--;
-            return true;
         }
-        return false;
+        return b;
     }
 }
