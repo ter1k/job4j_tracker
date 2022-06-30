@@ -29,14 +29,26 @@ public class Tracker {
     }
 
     public Item findById(int id) {
-        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
+        int i = indexOf(id);
+        return i != -1 ? items[i] : null;
+    }
+
+    private int indexOf(int id) {
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId() == id) {
+                return i;
             }
         }
-        return rsl;
+        return -1;
+    }
+
+    public boolean replace(int id, Item idem) {
+        int i = indexOf(id);
+        if (i != -1) {
+            idem.setId(id);
+            items[i] = idem;
+            return true;
+        }
+        return false;
     }
 }
