@@ -1,13 +1,13 @@
 package ru.job4j.pojo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Student {
     private String lastName;
     private String firstName;
     private String middleName;
     private String group;
-    private Date enrollmentDate;
+    private LocalDateTime enrollmentDate;
 
     public String getLastName() {
         return lastName;
@@ -41,11 +41,11 @@ public class Student {
         this.group = group;
     }
 
-    public Date getEnrollmentDate() {
+    public LocalDateTime getEnrollmentDate() {
         return enrollmentDate;
     }
 
-    public void setEnrollmentDate(Date enrollmentDate) {
+    public void setEnrollmentDate(LocalDateTime enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
     }
 }
