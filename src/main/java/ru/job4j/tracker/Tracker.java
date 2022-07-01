@@ -57,12 +57,11 @@ public class Tracker {
         boolean b = i != -1;
         if (b) {
             items[i] = null;
-            if (i != items.length - 1) {
-                Item[] temp = Arrays.copyOf(items, items.length);
-                System.arraycopy(items, i + 1, items, i, size - i - 1);
-                items[size - 1] = null;
-            }
             size--;
+            if (i != items.length - 1) {
+                System.arraycopy(items, i + 1, items, i, size - i);
+                items[size + 1] = null;
+            }
         }
         return b;
     }
