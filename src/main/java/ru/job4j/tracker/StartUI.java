@@ -10,9 +10,16 @@ public class StartUI {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Пользователь выбрал: " + select);
-            } else {
+            System.out.println("The user entered " + select);
+            if (select == 0) {
+                System.out.println("=== Create a new Item ===");
+                System.out.print("Enter the name: ");
+                Item item = new Item(scanner.nextLine());
+                tracker.add(item);
+                System.out.println("An item was successfully added. " + item);
+                System.out.println();
+            } else if (select == 6) {
+                System.out.println("Exiting...");
                 run = false;
             }
         }
