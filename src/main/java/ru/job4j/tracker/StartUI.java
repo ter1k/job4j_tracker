@@ -17,7 +17,6 @@ public class StartUI {
                 Item item = new Item(scanner.nextLine());
                 tracker.add(item);
                 System.out.println("An item was successfully added. " + item);
-                System.out.println();
             } else if (select == 1) {
                 System.out.println("=== Show all items ===");
                 Item[] items = tracker.findAll();
@@ -28,7 +27,17 @@ public class StartUI {
                 } else {
                     System.out.println("There are no items in the storage yet.");
                 }
-                System.out.println();
+            } else if (select == 2) {
+                System.out.println("=== Edit item ===");
+                System.out.print("Enter item id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Enter a new name: ");
+                Item item = new Item(scanner.nextLine());
+                if (tracker.replace(id, item)) {
+                    System.out.println("The item has been successfully modified.");
+                } else {
+                    System.out.println("The item in question doesn't exist.");
+                }
             } else if (select == 6) {
                 System.out.println("Exiting...");
                 run = false;
