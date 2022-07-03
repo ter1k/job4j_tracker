@@ -20,9 +20,7 @@ public class StartUI {
                 System.out.println("=== Show all items ===");
                 Item[] items = tracker.findAll();
                 if (items.length > 0) {
-                    for (Item item : items) {
-                        System.out.println(item);
-                    }
+                    tracker.printAll(items);
                 } else {
                     System.out.println("There are no items in the storage yet.");
                 }
@@ -54,6 +52,16 @@ public class StartUI {
                     System.out.println(item);
                 } else {
                     System.out.println("Error: item with an id of " + id + " was not found.");
+                }
+            } else if (select == 5) {
+                System.out.println("=== Find items by name ===");
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    tracker.printAll(items);
+                } else {
+                    System.out.println("Error: item with a name \"" + name + "\" was not found");
                 }
             } else if (select == 6) {
                 System.out.println("Exiting...");

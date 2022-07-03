@@ -63,4 +63,16 @@ public class Tracker {
         return rsl;
     }
 
+    public void printAll(Item[] item) {
+        for (Item temp : item) {
+            System.out.println(temp);
+        }
+    }
+
+    public void printAll() {
+        for (Item temp : items) {
+            System.out.println(temp);
+        }
+    }
+
 }
