@@ -38,7 +38,8 @@ public class StartUI {
             } else if (select == 3) {
                 System.out.println("=== Delete item ===");
                 System.out.print("Enter item id: ");
-                if (tracker.delete(Integer.parseInt(scanner.nextLine()))) {
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
                     System.out.println("Item deleted successfully");
                 } else {
                     System.out.println("The item in question doesn't exist.");
