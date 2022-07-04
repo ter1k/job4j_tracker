@@ -20,7 +20,9 @@ public class StartUI {
                 System.out.println("=== Show all items ===");
                 Item[] items = tracker.findAll();
                 if (items.length > 0) {
-                    tracker.printAll(items);
+                    for (Item temp : items) {
+                        System.out.println(temp);
+                    }
                 } else {
                     System.out.println("There are no items in the storage yet.");
                 }
@@ -60,7 +62,9 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item[] items = tracker.findByName(name);
                 if (items.length > 0) {
-                    tracker.printAll(items);
+                    for (Item temp: items) {
+                        System.out.println(temp);
+                    }
                 } else {
                     System.out.println("Error: item with a name \"" + name + "\" was not found");
                 }
